@@ -1,4 +1,7 @@
-This repo describe a bug candidate of thread sanitizer:
+This repo describe a bug candidate of thread sanitizer.
+This bug is already reported:
+https://github.com/google/sanitizers/issues/814
+https://github.com/google/sanitizers/issues/1419
 
 ## Environment
 Ubuntu 22.04 + Gcc-11(installed by apt)
