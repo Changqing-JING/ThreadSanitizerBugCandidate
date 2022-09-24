@@ -243,3 +243,10 @@ SUMMARY: ThreadSanitizer: lock-order-inversion (potential deadlock) /usr/include
 ==================
 ThreadSanitizer: reported 1 warnings
 ```
+
+## Suppress warning
+[Doc](https://github.com/google/sanitizers/wiki/ThreadSanitizerSuppressions)
+[Stackoverflow answer](https://github.com/google/sanitizers/wiki/ThreadSanitizerSuppressions)
+```shell
+TSAN_OPTIONS="suppressions=sanitizer-thread-suppressions.txt" ./build/sanitizerDemo
+```
