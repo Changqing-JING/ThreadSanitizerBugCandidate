@@ -9,14 +9,14 @@ std::mutex m3;
 std::atomic<int> counter {0};
 
 void foo(){
-  std::lock_guard<std::mutex> lock1(m1);
-  std::lock_guard<std::mutex> lock2(m2);
+  std::unique_lock<std::mutex> lock1(m1);
+  std::unique_lock<std::mutex> lock2(m2);
 }
 
 void xoo(){
   foo();
-  std::lock_guard<std::mutex> lock2(m2);
-  std::lock_guard<std::mutex> lock3(m3);
+  std::unique_lock<std::mutex> lock2(m2);
+  std::unique_lock<std::mutex> lock3(m3);
 }
 
 void yoo(){

@@ -5,9 +5,9 @@ Ubuntu 22.04 + Gcc-11(installed by apt)
 ```
 $ uname -a
 Linux ubuntu 5.15.0-25-generic #25-Ubuntu SMP Wed Mar 30 15:54:22 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
-$ gcc -v
+$ g++ -v
 Using built-in specs.
-COLLECT_GCC=gcc
+COLLECT_GCC=g++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
 OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
 OFFLOAD_TARGET_DEFAULT=1
@@ -22,9 +22,15 @@ gcc version 11.2.0 (Ubuntu 11.2.0-19ubuntu1)
 ```shell
 mkdir build
 cd build
-cmake ..
+cmake -DCMAKE_BUILD_TYPE=Debug ..
 make
 ./sanitizerDemo
+```
+or
+```shell
+mkdir build
+g++ -g -fsanitize=thread -o build/sanitizerDemo main.cpp
+./build/sanitizerDemo
 ```
 
 ## Expected behavior:
